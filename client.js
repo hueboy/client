@@ -52,7 +52,7 @@ board.on("ready", function() {
 	send = true;	
     }
 
-    if((this.value < 300) && !lampOff) {
+    if((this.value < 330) && !lampOff) {
         lampOn = false;
         lampOff	= true;
         send = true;
