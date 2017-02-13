@@ -29,6 +29,7 @@ mqttClient.on('connect', function () {
         name : "light",
         description: "A light sensor",
         timestamp: 1000,
+	latency: 0,
         active: true,
         ioType: "analog"
     }));
@@ -46,13 +47,13 @@ board.on("ready", function() {
     // data on the edge network
     send = false;
 
-    if((this.value > 700) && !lampOn) {
+    if((this.value > 600) && !lampOn) {
         lampOn = true;
 	lampOff = false;
 	send = true;	
     }
 
-    if((this.value < 330) && !lampOff) {
+    if((this.value < 370) && !lampOff) {
         lampOn = false;
         lampOff	= true;
         send = true;
